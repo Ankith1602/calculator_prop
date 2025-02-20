@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        input[type="button"] {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 5px;
+        }
+        #discc{
+            width: 240px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            border-radius: 1px solid black;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+           text-align: center;
+           size: 50px;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="container"  >
+        <form>
+        <h1 style="text-align: center;
+           size: 1000px;">calculator</h1>
+        <div>
+            <input id="discc">
+        </div>
+        <div>
+            <input type="button" name="b1" value=" ae" onclick="toclear()"  class="calculatorclass" style="background-color: red;">
+            <input type="button" name="b2" value=" de" onclick="todelete()"  class="calculatorclass"  style="background-color: red;">
+            <input type="button" name="b3" value=" ." onclick="toappends('.')"  class="calculatorclass" style="background-color: red;">
+            <input type="button" name="b4" value=" /" onclick="toappends('/')"  class="calculatorclass" style="background-color: red;">
+
+        </div>
+        <div>
+            <input type="button" name="b5" onclick="toappends('7')"  class="calculatorclass" value=" 7">
+            <input type="button" name="b6" onclick="toappends('8')"   class="calculatorclass" value=" 8">
+            <input type="button" name="b7" onclick="toappends('9')"  class="calculatorclass" value=" 9">
+            <input type="button" name="b8" onclick="toappends('*')"  class="calculatorclass" value=" *" style="background-color: red;">
+
+        </div>
+        <div>
+            <input type="button" name="b9" onclick="toappends('4')"   class="calculatorclass" value=" 4">
+            <input type="button" name="b10" onclick="toappends('5')"  class="calculatorclass" value=" 5">
+            <input type="button" name="b11" onclick="toappends('6')"  class="calculatorclass" value=" 6">
+            <input type="button" name="b12" onclick="toappends('-')"  class="calculatorclass" value=" -" style="background-color: red;">
+
+        </div>
+        <div>
+            <input type="button" name="b13" onclick="toappends('1')"  class="calculatorclass" value=" 1">
+            <input type="button" name="b14" onclick="toappends('2')"  class="calculatorclass" value=" 2">
+            <input type="button" name="b15" onclick="toappends('3')"  class="calculatorclass" value=" 3">
+            <input type="button" name="b16" onclick="toappends('+')"  class="calculatorclass" value=" +" style="background-color: red;">
+
+        </div>
+        <div>
+            <input type="button" name="b17" onclick="toappends('00')"  class="calculatorclass" value=" 00">
+            <input type="button" name="b18" onclick="toappends('0')"  class="calculatorclass" value=" 0">
+            <input type="button" name="b19" onclick="toappends('%')"  class="calculatorclass" value=" %"style="background-color: red;">
+            <input type="button" name="b20" onclick="tocalculate()"  class="calculatorclass" value=" =" style="background-color: red;">
+
+        </div>
+         </form>
+
+    </div>
+    <script>
+      
+        let disc=document.getElementById("discc");
+        function toappends(input){
+            disc.value  += input
+
+     };
+
+     function todelete(){
+        disc.value=disc.value.slice(0,-1)
+     };
+     function toclear(){
+        disc.value=" "
+     };
+
+     function tocalculate(){
+        disc.value=eval(disc.value)
+     }
+
+    </script>
+</body>
+</html>
